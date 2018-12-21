@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OperationsComponent } from './operations/operations.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OperationsComponent
+    OperationsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
