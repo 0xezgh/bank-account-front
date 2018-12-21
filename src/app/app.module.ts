@@ -8,12 +8,14 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OperationsComponent } from './operations/operations.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { OperationsHistoryComponent } from './operations-history/operations-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OperationsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    OperationsHistoryComponent
   ],
   imports: [
     BrowserModule,
