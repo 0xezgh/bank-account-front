@@ -9,5 +9,5 @@
 any other url will redirect to the 404 not found page
 
 * to run the project:
-- download it
-- hit npm install and then ng serve
+-download it
+-hit npm install and then ng serve
