@@ -6,7 +6,8 @@ import { OperationsComponent } from './operations/operations.component';
 import { OperationsHistoryComponent } from './operations-history/operations-history.component';
 
 export const routes: Routes = [
-  { path: '', component: OperationsComponent },
+  { path: 'operations', component: OperationsComponent },
+  { path: '', redirectTo: 'operations', pathMatch: 'full' },
   { path: 'operationsHistory', component: OperationsHistoryComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' }
