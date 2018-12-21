@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OperationsComponent } from './operations/operations.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OperationsHistoryComponent } from './operations-history/operations-history.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OperationsComponent,
     PageNotFoundComponent,
-    OperationsHistoryComponent
+    OperationsHistoryComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

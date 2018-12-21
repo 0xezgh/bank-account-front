@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { OperationsComponent } from './operations/operations.component';
+import { OperationsHistoryComponent } from './operations-history/operations-history.component';
+
+export const routes: Routes = [
+  { path: '', component: OperationsComponent },
+  { path: 'operationsHistory', component: OperationsHistoryComponent },
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '404' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
