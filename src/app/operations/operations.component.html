@@ -1,10 +1,17 @@
-<mat-card>
-  <mat-form-field>
-    <input matInput placeholder="Amount" type="number" class="example-right-align">
-    <span matPrefix>$&nbsp;</span>
-    <span matSuffix>.00</span>
-  </mat-form-field>
-  <br />
-  <button mat-raised-button color="primary">Deposit</button>
-  <button mat-raised-button color="primary">Withdraw</button>
-</mat-card>
+  <mat-card class="centered-form">
+      <form>
+        <mat-form-field class="amountClass">
+          <input matInput type="number" formControlName="amount" />
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="descriptionClass">
+          <textarea matInput rows="5" placeholder="Operation description" formControlName="operationDescription"></textarea>
+        </mat-form-field>
+        <br />
+        <button mat-raised-button class="form-btn" color="primary">Withdraw</button>
+        &nbsp;&nbsp;
+        <button mat-raised-button class="form-btn" color="primary">Deposit</button>
+      </form>
+    </mat-card>
