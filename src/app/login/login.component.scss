@@ -1,0 +1,9 @@
+.centered-form{
+    left: 50%;
+    top: 50%;
+    width: 20%;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
