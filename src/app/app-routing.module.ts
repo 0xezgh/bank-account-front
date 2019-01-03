@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OperationsComponent } from './operations/operations.component';
+import { LoginComponent } from './login/login.component';
 import { OperationsHistoryComponent } from './operations-history/operations-history.component';
 
 export const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: 'operations', component: OperationsComponent },
   { path: '', redirectTo: 'operations', pathMatch: 'full' },
   { path: 'operationsHistory', component: OperationsHistoryComponent },

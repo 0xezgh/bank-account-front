@@ -12,6 +12,7 @@ import { OperationsComponent } from './operations/operations.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OperationsHistoryComponent } from './operations-history/operations-history.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     OperationsComponent,
     PageNotFoundComponent,
     OperationsHistoryComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
