@@ -1,16 +1,28 @@
   <mat-card class="centered-form">
-      <form>
+      <form [formGroup]="operationForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
         <mat-form-field class="amountClass">
           <input matInput type="number" formControlName="amount" />
           <span matPrefix>$&nbsp;</span>
           <span matSuffix>.00</span>
+          <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+              <div *ngIf="f.amount.errors.required">amount is required</div>
+          </div>
         </mat-form-field>
+        </div>
         <br>
+        <div class="form-group">
         <mat-form-field class="descriptionClass">
-          <textarea matInput rows="5" placeholder="Operation description" formControlName="operationDescription"></textarea>
+          <textarea matInput rows="5" placeholder="Operation description" formControlName="operationDescription" [ngClass]="{ 'is-invalid': submitted && f.operationDescription.errors }"></textarea>
+            <div *ngIf="submitted && f.operationDescription.errors" class="invalid-feedback">
+              <div *ngIf="f.operationDescription.errors.required">description is required</div>
+              <div *ngIf="f.operationDescription.errors.minlength">minimum length is 10 characters</div>
+              <div *ngIf="f.operationDescription.errors.maxlength">maximum length is 200 characters</div>
+          </div>
         </mat-form-field>
+        </div>
         <br />
-        <button mat-raised-button class="form-btn" color="primary">Withdraw</button>
+        <button mat-raised-button class="form-btn" color="primary" >Withdraw</button>
         &nbsp;&nbsp;
         <button mat-raised-button class="form-btn" color="primary">Deposit</button>
       </form>
