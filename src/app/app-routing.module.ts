@@ -9,7 +9,7 @@ import { OperationsHistoryComponent } from './operations-history/operations-hist
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'operations', component: OperationsComponent },
-  { path: '', redirectTo: 'operations', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'operationsHistory', component: OperationsHistoryComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' }
