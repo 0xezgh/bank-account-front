@@ -4,18 +4,18 @@
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form class="example-form">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="example-form">
         <table class="example-full-width" cellspacing="0">
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+              <input matInput placeholder="Username" [(ngModel)]="username" formControlName="username" >
               </mat-form-field>
             </td>
           </tr>
           <tr>
           <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
+            <input matInput placeholder="Password" [(ngModel)]="password" type="password" formControlName="password" >
           </mat-form-field></td>
         </tr></table>
       </form>

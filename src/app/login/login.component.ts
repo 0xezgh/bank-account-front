@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../guard/auth.service';
 
@@ -10,22 +10,23 @@ import { AuthService } from '../guard/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  form;
+  loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private route: Router, private authService: AuthService) {
-    this.form = fb.group({
-        username: ['', [Validators.required]],
-        password: ['', Validators.required]
-    });
+
   }
 
   ngOnInit() {
+      this.loginForm = this.fb.group({
+      username: ['', [Validators.required]],
+      password: ['', Validators.required]
+  });
   }
 
   login() {
-    if (this.form.valid) {
-      this.authService.setIdentity(this.form.value.username);
-      this.route.navigate(['']);
+    if (this.loginForm.valid) {
+      this.authService.setIdentity(this.loginForm.value.username);
+      this.route.navigate(['operations']);
     }
   }
 }

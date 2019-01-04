@@ -55,6 +55,9 @@
       <span class="toolbar-filler"></span>
       <button id="button-operations" class="button-menu" style="font-family:cursive;font-size:150%;" mat-button routerLink="operations">Home</button>
       <button id="button-operationsHistory" class="button-menu" style="font-family:cursive;font-size:150%;" mat-button routerLink="operationsHistory">Operations' History</button>
-  </mat-toolbar>
+      <button id="button-login" mat-button class="button-menu" style="font-family:cursive;font-size:150%;" routerLink="login" *ngIf="!isAuthenticated()" >Login</button>
+      <button id="button-logout" mat-button class="button-menu" style="font-family:cursive;font-size:150%;" *ngIf="isAuthenticated()" (click)="logout()">Logout</button>
+   
+    </mat-toolbar>
   <router-outlet></router-outlet>
 </mat-sidenav-container>

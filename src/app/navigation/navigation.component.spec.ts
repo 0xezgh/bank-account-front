@@ -6,6 +6,7 @@ import { MaterialModule } from '../material.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppModule } from '../app.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { AuthService } from '../guard/auth.service';
 
 @Component({selector: 'router-outlet', template: ''})
 class RouterOutletStubComponent { }
@@ -17,10 +18,11 @@ describe('NavigationComponent', () => {
   beforeEach(async(() => {
 
       TestBed.configureTestingModule({
-          imports: [
+        imports: [
               AppModule,
               RouterTestingModule.withRoutes([])
-           ]
+        ],
+        providers: [AuthService]
       })
 
       // Get rid of app's Router configuration otherwise many failures.
