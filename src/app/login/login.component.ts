@@ -1,24 +1,31 @@
-
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material'
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../guard/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router) { }
-username: string;
-password: string;
+
+  form;
+
+  constructor(private fb: FormBuilder, private route: Router, private authService: AuthService) {
+    this.form = fb.group({
+        username: ['', [Validators.required]],
+        password: ['', Validators.required]
+    });
+  }
+
   ngOnInit() {
   }
-  login() : void {
-    if(this.username == 'admin' && this.password == 'admin'){
-     this.router.navigate(["operations"]);
-    }else {
-      alert("Invalid credentials");
-      this.router.navigate(["404"]);
+
+  login() {
+    if (this.form.valid) {
+      this.authService.setIdentity(this.form.value.username);
+      this.route.navigate(['']);
     }
   }
-  }
+}
