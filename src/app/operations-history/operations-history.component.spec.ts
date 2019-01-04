@@ -1,5 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MaterialModule } from '../material.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OperationsHistoryComponent } from './operations-history.component';
 
 describe('OperationsHistoryComponent', () => {
@@ -8,6 +12,11 @@ describe('OperationsHistoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        MaterialModule,
+        NoopAnimationsModule,
+        FormsModule, ReactiveFormsModule
+      ],
       declarations: [ OperationsHistoryComponent ]
     })
     .compileComponents();

@@ -1,6 +1,10 @@
+import { OperationsComponent } from './operations.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OperationsComponent } from './operations.component';
+import { MaterialModule } from '../material.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 describe('OperationsComponent', () => {
   let component: OperationsComponent;
@@ -8,6 +12,11 @@ describe('OperationsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        MaterialModule,
+        NoopAnimationsModule,
+        FormsModule, ReactiveFormsModule
+      ],
       declarations: [ OperationsComponent ]
     })
     .compileComponents();
